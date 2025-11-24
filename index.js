@@ -6,6 +6,7 @@ const ejsMate = require('ejs-mate');
 
 const app = express();
 
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended : true}));
 app.engine('ejs', ejsMate);
@@ -15,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Bilad Cleaning Service Home Page');
+    res.render('home')
 });
 
 const PORT = process.env.PORT || 3000;
