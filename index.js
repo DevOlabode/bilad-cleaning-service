@@ -18,8 +18,44 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
 
+const sessionConfig = {
+    secret : process.env.SECRET,
+    resave : false,
+    saveUninitialized : true,
+    cookie : {
+        secure : false,
+        httpOnly: true,
+        expires : new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+    }
+};
+
+app.use(session(sessionConfig));
+app.use(flash());
+
+app.use((req, res, next)=>{
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    res.locals.info = req.flash('info');
+    res.locals.warning = req.flash('warning')
+    next();
+});
+
 app.get('/', (req, res) => {
+    req.flash('success', 'Welcome to BILAD');
     res.render('home')
+});
+
+app.all(/(.*)/, (req, res, next) => {
+    next(new ExpressError('Page not found', 404))
+});
+
+app.use((err, req, res, next)=>{
+    const {statusCode = 500} = err;
+    if(!err.message){
+        err.message = 'Something Went Wrong!'
+    }
+    res.status(statusCode).render('error', {err})
 });
 
 const PORT = process.env.PORT || 3000;
