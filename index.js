@@ -43,7 +43,7 @@ app.use((req, res, next)=>{
 
 app.get('/', (req, res) => {
     req.flash('success', 'Welcome to BILAD');
-    res.render('home')
+    res.render('home');
 });
 
 app.all(/(.*)/, (req, res, next) => {
