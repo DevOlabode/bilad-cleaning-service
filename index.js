@@ -2,6 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 
+const session = require('express-session');
+const flash = require('connect-flash');
+
 const ejsMate = require('ejs-mate');
 
 const app = express();
