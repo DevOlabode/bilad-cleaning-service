@@ -13,4 +13,12 @@ router.get('/airbnb', (req, res) =>{
     res.render('services/airbnb')
 });
 
+router.get('/office-cleaning', (req, res)=>{
+    res.render('services/officeCleaning')
+});
+
+router.get('/commercial', (req, res) =>{
+    res.render('services/commercial')
+});
+
 module.exports = router;
