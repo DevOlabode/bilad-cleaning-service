@@ -21,4 +21,8 @@ router.get('/commercial', (req, res) =>{
     res.render('services/commercial')
 });
 
+router.get('/operation', (req, res)=>{
+    res.render('plan/operation')
+});
+
 module.exports = router;
