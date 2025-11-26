@@ -1,11 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-
 const session = require('express-session');
 const flash = require('connect-flash');
-
 const ejsMate = require('ejs-mate');
+const ExpressError = require('./utils/ExpressError');
 
 const app = express();
 
@@ -15,7 +14,6 @@ app.use(express.urlencoded({extended : true}));
 app.engine('ejs', ejsMate);
 
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(express.json());
 
 const sessionConfig = {
@@ -30,14 +28,16 @@ const sessionConfig = {
     }
 };
 
-app.use(flash())
-
+// IMPORTANT: session must come BEFORE flash
 app.use(session(sessionConfig));
+app.use(flash());
+
+// Flash middleware - makes flash messages available to all views
 app.use((req, res, next)=>{
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     res.locals.info = req.flash('info');
-    res.locals.warning = req.flash('warning')
+    res.locals.warning = req.flash('warning');
     next();
 });
 
@@ -50,12 +50,14 @@ app.all(/(.*)/, (req, res, next) => {
     next(new ExpressError('Page not found', 404))
 });
 
+
+// Error handler
 app.use((err, req, res, next)=>{
     const {statusCode = 500} = err;
     if(!err.message){
-        err.message = 'Something Went Wrong!'
+        err.message = 'Something Went Wrong!';
     }
-    res.status(statusCode).render('error', {err})
+    res.status(statusCode).render('error', {err});
 });
 
 const PORT = process.env.PORT || 3000;
