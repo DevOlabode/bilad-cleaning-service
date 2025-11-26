@@ -1,3 +1,201 @@
 <% layout('layout/boilerplate.ejs') %>
 
-<h2>The Landing Page</h2>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-content">
+                <h1 class="display-3 fw-bold mb-4">Professional Cleaning Services in Edmonton</h1>
+                <p class="lead mb-4">We provide top-tier cleaning solutions for residential, Airbnb, office, and commercial spaces. Experience the Bilad difference today!</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#services" class="btn-primary-custom">Our Services</a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg">Get a Quote</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                <img src="/images/cleaning-hero.svg" alt="Cleaning Services" class="img-fluid" style="max-height: 400px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p class="lead">Comprehensive cleaning solutions tailored to your needs</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Residential Cleaning -->
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        🏠
+                    </div>
+                    <h3>Residential Cleaning</h3>
+                    <p>Professional home cleaning services to keep your space spotless and comfortable.</p>
+                    <ul>
+                        <li>Standard & Deep Cleaning</li>
+                        <li>Move-In/Move-Out Cleaning</li>
+                        <li>Post-Renovation Cleaning</li>
+                        <li>Seasonal/Custom Cleaning Plans</li>
+                    </ul>
+                    <a href="/residential" class="btn btn-primary mt-3">Learn More →</a>
+                </div>
+            </div>
+            
+            <!-- Airbnb Cleaning -->
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        🏘️
+                    </div>
+                    <h3>Airbnb & Short-Term Rental</h3>
+                    <p>Specialized turnover cleaning to keep your rental property guest-ready.</p>
+                    <ul>
+                        <li>Fast Turnover Cleaning</li>
+                        <li>Linen Washing & Replacement</li>
+                        <li>Restocking Essentials</li>
+                        <li>Damage Reports & Photos</li>
+                    </ul>
+                    <a href="/airbnb" class="btn btn-primary mt-3">Learn More →</a>
+                </div>
+            </div>
+            
+            <!-- Office Cleaning -->
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        🏢
+                    </div>
+                    <h3>Office Cleaning</h3>
+                    <p>Keep your workspace clean, healthy, and productive with our janitorial services.</p>
+                    <ul>
+                        <li>Daily, Weekly, Bi-weekly, Monthly</li>
+                        <li>Janitorial Services</li>
+                        <li>Washroom Sanitization</li>
+                        <li>High-Touch Disinfection</li>
+                    </ul>
+                    <a href="/office-cleaning" class="btn btn-primary mt-3">Learn More →</a>
+                </div>
+            </div>
+            
+            <!-- Commercial Cleaning -->
+            <div class="col-lg-6 col-md-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        🏪
+                    </div>
+                    <h3>Commercial Cleaning</h3>
+                    <p>Professional cleaning for retail stores, clinics, daycares, and warehouses.</p>
+                    <ul>
+                        <li>Retail Stores & Clinics</li>
+                        <li>Daycares & Warehouses</li>
+                        <li>Post-Construction Cleaning</li>
+                        <li>Floor Care & Polishing</li>
+                    </ul>
+                    <a href="/commercial" class="btn btn-primary mt-3">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Why Choose Bilad Cleaning Services?</h2>
+            <p class="lead">Your trusted cleaning partner in Edmonton</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+                    <h4>Fast Response</h4>
+                    <p>Quick turnaround and flexible scheduling to meet your needs</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+                    <h4>Quality Assurance</h4>
+                    <p>Trained, insured, and background-checked professionals</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        🌿
+                    </div>
+                    <h4>Eco-Friendly</h4>
+                    <p>Hospital-grade and environmentally safe cleaning products</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        💼
+                    </div>
+                    <h4>Professional Team</h4>
+                    <p>Experienced cleaners with WHMIS and safety certifications</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service Areas Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>We Serve Edmonton & Surrounding Areas</h2>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <h5>📍 Edmonton</h5>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>📍 Sherwood Park</h5>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>📍 St. Albert</h5>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>📍 Leduc</h5>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>📍 Spruce Grove</h5>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>📍 Fort Saskatchewan</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" id="contact">
+    <div class="container">
+        <h2 class="display-4 fw-bold">Ready to Experience Spotless Spaces?</h2>
+        <p class="lead">Contact us today for a free consultation and quote</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="tel:+17804567890" class="btn-white">📞 Call Us Now</a>
+            <a href="mailto:info@biladcleaning.com" class="btn btn-outline-light btn-lg">✉️ Email Us</a>
+        </div>
+        <div class="mt-5">
+            <h4>Operating Hours</h4>
+            <p class="mb-0">7:00 AM - 10:00 PM (Flexible Scheduling)</p>
+        </div>
+    </div>
+</section>

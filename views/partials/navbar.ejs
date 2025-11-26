@@ -1,39 +1,47 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/"><img src="../LOGOS/logo 1.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="/LOGOS/logo 1.png" alt="Bilad Cleaning Services" height="50">
+            <span class="ms-2 fw-bold text-primary d-none d-md-inline">Bilad Cleaning</span>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Company Overview</a>
-                </li>
+                
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Our Services
+                    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Services
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/residential">Residential</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <li><a class="dropdown-item" href="/residential"><i class="fas fa-home me-2"></i> Residential Cleaning</a></li>
                         <li><hr class="dropdown-divider"></li>
-
-                        <li><a class="dropdown-item" href="/airbnb">Air BnB</a></li>
+                        <li><a class="dropdown-item" href="/airbnb"><i class="fas fa-building me-2"></i> Airbnb Cleaning</a></li>
                         <li><hr class="dropdown-divider"></li>
-
-                        <li><a class="dropdown-item" href="/office-cleaning">Office Cleaning</a></li>
+                        <li><a class="dropdown-item" href="/office-cleaning"><i class="fas fa-briefcase me-2"></i> Office Cleaning</a></li>
                         <li><hr class="dropdown-divider"></li>
-
-                        <li><a class="dropdown-item" href="/commercial">Commercial Cleaning</a></li>
-                        <li><hr class="dropdown-divider"></li>
-
+                        <li><a class="dropdown-item" href="/commercial"><i class="fas fa-store me-2"></i> Commercial Cleaning</a></li>
                     </ul>
                 </li>
-
+                
                 <li class="nav-item">
-                    <a href="/operation" class="nav-link">Operation Plan</a>
+                    <a class="nav-link" href="/operation">About Us</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                
+                <li class="nav-item ms-lg-3">
+                    <a href="tel:+17804567890" class="btn btn-primary rounded-pill px-4">
+                        <i class="fas fa-phone me-2"></i> Get a Quote
+                    </a>
                 </li>
             </ul>
         </div>
