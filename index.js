@@ -1,9 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
+
 const session = require('express-session');
 const flash = require('connect-flash');
+
 const ejsMate = require('ejs-mate');
+
+const CatchAsync  =require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
 
 const app = express();
@@ -28,11 +32,9 @@ const sessionConfig = {
     }
 };
 
-// IMPORTANT: session must come BEFORE flash
 app.use(session(sessionConfig));
 app.use(flash());
 
-// Flash middleware - makes flash messages available to all views
 app.use((req, res, next)=>{
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
@@ -42,7 +44,6 @@ app.use((req, res, next)=>{
 });
 
 app.get('/', (req, res) => {
-    req.flash('success', 'Welcome to BILAD');
     res.render('home');
 });
 
@@ -50,8 +51,6 @@ app.all(/(.*)/, (req, res, next) => {
     next(new ExpressError('Page not found', 404))
 });
 
-
-// Error handler
 app.use((err, req, res, next)=>{
     const {statusCode = 500} = err;
     if(!err.message){
