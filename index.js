@@ -10,6 +10,8 @@ const ejsMate = require('ejs-mate');
 const CatchAsync  =require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
 
+const routes = require('./routes.js');
+
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -43,9 +45,7 @@ app.use((req, res, next)=>{
     next();
 });
 
-app.get('/', (req, res) => {
-    res.render('home');
-});
+app.use('/', routes)
 
 app.all(/(.*)/, (req, res, next) => {
     next(new ExpressError('Page not found', 404))
