@@ -138,10 +138,6 @@ a:hover {
   font-weight: 700;
 }
 
-.header {
-  text-decoration: none;
-}
-
 .navbar-brand img {
   transition: var(--transition);
   height: 50px;
