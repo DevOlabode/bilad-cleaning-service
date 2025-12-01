@@ -138,6 +138,10 @@ a:hover {
   font-weight: 700;
 }
 
+.header {
+  text-decoration: none;
+}
+
 .navbar-brand img {
   transition: var(--transition);
   height: 50px;
@@ -552,7 +556,6 @@ a:hover {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -572,7 +575,6 @@ a:hover {
   opacity: 0;
 }
 
-/* ===== SERVICE AREAS SECTION ===== */
 .service-areas-section {
   background-color: var(--light-color);
 }
@@ -625,7 +627,6 @@ a:hover {
   margin-bottom: 0;
 }
 
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 992px) {
   .hero-section {
     padding: 4rem 0;

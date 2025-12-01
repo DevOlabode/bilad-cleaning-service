@@ -71,15 +71,12 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Initialize on DOM content loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Observe elements for animation
     const elements = document.querySelectorAll('.service-card, .feature-box, .pricing-card, .section-title, .hero-content, .location-card, .cta-info-item');
     elements.forEach(el => {
         observer.observe(el);
     });
 
-    // Auto-dismiss alerts after 5 seconds
     const alerts = document.querySelectorAll('.alert');
     alerts.forEach(alert => {
         setTimeout(() => {
@@ -88,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     });
 
-    // Add active class to current page nav link
     const currentPath = window.location.pathname;
     document.querySelectorAll('.nav-link').forEach(navLink => {
         const navHref = navLink.getAttribute('href');
