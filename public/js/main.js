@@ -80,17 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, index * 100);
     });
     
-    // Add parallax effect to hero section
-    const hero = document.querySelector('.hero-section');
-    if (hero) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            if (scrolled < hero.offsetHeight) {
-                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
-        });
-    }
-    
     // Add counter animation for stats
     const animateValue = (element, start, end, duration) => {
         let startTimestamp = null;

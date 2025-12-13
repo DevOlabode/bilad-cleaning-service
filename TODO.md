@@ -18,6 +18,6 @@
  -  Change the logo
 
 
-image link :
+image link for about us :
 
-https://www.bing.com/th/id/OIP.IISRLsalBRpfsB_MVx34MgHaE7?w=246&h=211&c=8&rs=1&qlt=90&o=6&cb=ucfimg1&dpr=1.3&pid=3.1&rm=2&ucfimg=1
+https://www.bing.com/th/id/OIP.ybxZ2IjE8Rh-FbJR9qlAiAHaE8?w=235&h=211&c=8&rs=1&qlt=90&o=6&cb=ucfimg1&dpr=1.3&pid=3.1&rm=2&ucfimg=1
