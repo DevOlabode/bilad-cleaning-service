@@ -1,5 +1,8 @@
     TODO
- - Change the font
+ -     
+    COMPLETED
+ -  Change the logo
+  - Change the font
  - Make the office and commercial cleaning the same thing (Combine them)
  - Make the location (where we serve) smaller (the space it takes on the page)
  - restyle the navbar
@@ -13,9 +16,6 @@
  - Change the email in the footer to her normal email and the cell number to her real number
  - Remove check availability in the homepage
  - Make the pages so captivating that the viewer will always wanna keep on scrolling and going to other pages.
-
-    COMPLETED
- -  Change the logo
 
 
 image link for about us :
