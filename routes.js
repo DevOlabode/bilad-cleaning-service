@@ -18,11 +18,20 @@ router.get('/office-cleaning', (req, res)=>{
 });
 
 router.get('/commercial', (req, res) =>{
-    res.render('services/commercial')
+    res.render('services/officeCleaning')
 });
 
 router.get('/operation', (req, res)=>{
     res.render('plan/operation')
+});
+
+router.post('/contact', (req, res) => {
+    const { name, email, phone, service, message } = req.body;
+    
+    // TODO: Implement email sending functionality here
+    // For now, just flash a success message
+    req.flash('success', 'Thank you for contacting us! We will get back to you soon.');
+    res.redirect('/#contact');
 });
 
 module.exports = router;

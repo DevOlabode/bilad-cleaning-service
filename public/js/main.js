@@ -72,9 +72,64 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', function() {
-    const elements = document.querySelectorAll('.service-card, .feature-box, .pricing-card, .section-title, .hero-content, .location-card, .cta-info-item');
-    elements.forEach(el => {
-        observer.observe(el);
+    const elements = document.querySelectorAll('.service-card, .feature-box, .pricing-card, .section-title, .hero-content, .location-card, .cta-info-item, .contact-form-card');
+    elements.forEach((el, index) => {
+        // Stagger animations
+        setTimeout(() => {
+            observer.observe(el);
+        }, index * 100);
+    });
+    
+    // Add parallax effect to hero section
+    const hero = document.querySelector('.hero-section');
+    if (hero) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            if (scrolled < hero.offsetHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+    }
+    
+    // Add counter animation for stats
+    const animateValue = (element, start, end, duration) => {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const value = Math.floor(progress * (end - start) + start);
+            element.textContent = value + '+';
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    };
+    
+    // Animate counters when they come into view
+    const observerCounters = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.dataset.target || '500');
+                animateValue(counter, 0, target, 2000);
+                observerCounters.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    document.querySelectorAll('[data-target]').forEach(counter => {
+        observerCounters.observe(counter);
+    });
+    
+    // Add hover effects to service cards
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-15px) scale(1.03)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
     });
 
     const alerts = document.querySelectorAll('.alert');
